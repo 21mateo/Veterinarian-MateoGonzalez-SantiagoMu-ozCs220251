@@ -1,5 +1,14 @@
 package app.adapters.persons.repository;
 
-public interface PersonRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import app.adapters.person.entity.PersonEntity;
+import app.domain.models.Person;
+
+public interface PersonRepository extends JpaRepository<PersonEntity, Long> {
+	
+	boolean existsByDocument(Person person);
+	
+	PersonEntity findByDocument(long document);
 
 }
