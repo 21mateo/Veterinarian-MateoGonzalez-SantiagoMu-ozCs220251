@@ -1,8 +1,8 @@
 package app.ports;
 
-import app.domain.models.order;
+import app.domain.models.Order;
 
-public interface orderPort {
-	public void createOrder(order Order) throws Exception;
+public interface OrderPort {
+	public void createOrder(Order order) throws Exception;
 
 }

@@ -1,10 +1,10 @@
 package app.ports;
 
-import app.domain.models.user;
+import app.domain.models.User;
 
-public interface userPort {
-	public user findByUserName(user User) throws Exception;
-	public boolean existsByUserName(user User) throws Exception;
-	public void createUser(user User) throws Exception;
+public interface UserPort {
+	public User findByUserName(User user) throws Exception;
+	public boolean existsByUserName(String userName) throws Exception;
+	public void createUser(User user) throws Exception;
 
 }

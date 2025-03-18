@@ -3,24 +3,24 @@ package app.domain.models;
 import lombok.NoArgsConstructor;
 @NoArgsConstructor
 
-public class veterinarian {
+public class VeterinarianHistory {
 	private long date;
-	private pet petId;
-	private user veterinarian;
+	private Pet petId;
+	private User veterinarian;
 	private String reason;
-	private order orderId;
+	private Order orderId;
 	private String diagnosis;
 	private String medicine;
 	private String dose;
 	private String procedureName;
 	private String procedureDetail;
 	private String status;
-	private String vaccunation;
+	private String vaccination;
 	private String alergies;
 	
-	public veterinarian(long date, pet petId, user veterinarian, String reason, order orderId, String diagnosis,
+	public VeterinarianHistory(long date, Pet petId, User veterinarian, String reason, Order orderId, String diagnosis,
 			String medicine, String dose, String procedureName, String procedureDetail, String status,
-			String vaccunation, String alergies) {
+			String vaccination, String alergies) {
 		super();
 		this.date = date;
 		this.petId = petId;
@@ -33,7 +33,7 @@ public class veterinarian {
 		this.procedureName = procedureName;
 		this.procedureDetail = procedureDetail;
 		this.status = status;
-		this.vaccunation = vaccunation;
+		this.vaccination = vaccination;
 		this.alergies = alergies;
 	}
 
@@ -45,19 +45,19 @@ public class veterinarian {
 		this.date = date;
 	}
 
-	public pet getPetId() {
+	public Pet getPetId() {
 		return petId;
 	}
 
-	public void setPetId(pet petId) {
+	public void setPetId(Pet petId) {
 		this.petId = petId;
 	}
 
-	public user getVeterinarian() {
+	public User getVeterinarian() {
 		return veterinarian;
 	}
 
-	public void setVeterinarian(user veterinarian) {
+	public void setVeterinarian(User veterinarian) {
 		this.veterinarian = veterinarian;
 	}
 
@@ -69,11 +69,11 @@ public class veterinarian {
 		this.reason = reason;
 	}
 
-	public order getOrderId() {
+	public Order getOrderId() {
 		return orderId;
 	}
 
-	public void setOrderId(order orderId) {
+	public void setOrderId(Order orderId) {
 		this.orderId = orderId;
 	}
 
@@ -126,11 +126,11 @@ public class veterinarian {
 	}
 
 	public String getVaccunation() {
-		return vaccunation;
+		return vaccination;
 	}
 
 	public void setVaccunation(String vaccunation) {
-		this.vaccunation = vaccunation;
+		this.vaccination = vaccunation;
 	}
 
 	public String getAlergies() {

@@ -1,9 +1,9 @@
 package app.service.interfaces;
 
-import app.domain.models.user;
+import app.domain.models.User;
 
 public interface loginService {
-	public void login(user User) throws Exception;
+	public void login(User User) throws Exception;
 	public void logout();
 
 }

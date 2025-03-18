@@ -5,16 +5,16 @@ import java.sql.Date;
 import lombok.NoArgsConstructor;
 @NoArgsConstructor
 
-public class invoice {
+public class Invoice {
 	private long id;
-	private pet petId;
-	private person ownerId;
-	private order orderId;
+	private Pet petId;
+	private Person ownerId;
+	private Order orderId;
 	private String items;
 	private double amount;
 	private Date date;
 
-	public invoice(long id, pet petId, person ownerId, order orderId, String items, double amount, Date date) {
+	public Invoice(long id, Pet petId, Person ownerId, Order orderId, String items, double amount, Date date) {
 		super();
 		this.id = id;
 		this.petId = petId;
@@ -25,7 +25,7 @@ public class invoice {
 		this.date = date;
 	}
 
-	public invoice() {
+	public Invoice() {
 	}
 
 	public long getId() {
@@ -36,27 +36,27 @@ public class invoice {
 		this.id = id;
 	}
 
-	public pet getPetId() {
+	public Pet getPetId() {
 		return petId;
 	}
 
-	public void setPetId(pet petId) {
+	public void setPetId(Pet petId) {
 		this.petId = petId;
 	}
 
-	public person getOwnerId() {
+	public Person getOwnerId() {
 		return ownerId;
 	}
 
-	public void setOwnerId(person ownerId) {
+	public void setOwnerId(Person ownerId) {
 		this.ownerId = ownerId;
 	}
 
-	public order getOrderId() {
+	public Order getOrderId() {
 		return orderId;
 	}
 
-	public void setOrderId(order orderId) {
+	public void setOrderId(Order orderId) {
 		this.orderId = orderId;
 	}
 

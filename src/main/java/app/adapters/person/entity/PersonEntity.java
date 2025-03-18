@@ -1,55 +1,49 @@
-package app.domain.models;
+package app.adapters.person.entity;
 
-import lombok.NoArgsConstructor;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
-@NoArgsConstructor
-public class Person {
+@Entity
+@Table(name ="person")
+public class PersonEntity {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name= "id")
 	private long id;
+	@Column(name= "name")
 	private String name;
+	@Column(name= "document")
 	private long document;
+	@Column(name= "age")
 	private int age;
-	
-	public Person(long id, String name, long document, int age) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.document = document;
-		this.age = age;
-	}
-	
-	public Person() {
-	}
-
 	public long getId() {
 		return id;
 	}
-
 	public void setId(long id) {
 		this.id = id;
 	}
-
 	public String getName() {
 		return name;
 	}
-
 	public void setName(String name) {
 		this.name = name;
 	}
-
 	public long getDocument() {
 		return document;
 	}
-
 	public void setDocument(long document) {
 		this.document = document;
 	}
-
 	public int getAge() {
 		return age;
 	}
-
 	public void setAge(int age) {
 		this.age = age;
 	}
+	
 
 }

@@ -1,10 +1,10 @@
 package app.ports;
 
-import app.domain.models.pet;
+import app.domain.models.Pet;
 
-public interface petPort {
-	public void createPet(pet Pet) throws Exception;
-	public pet findById(pet Pet) throws Exception;
-	public boolean existsById(pet Pet) throws Exception;
+public interface PetPort {
+	public void createPet(Pet pet) throws Exception;
+	public Pet findById(Pet pet) throws Exception;
+	public boolean existsById(Pet pet) throws Exception;
 
 }

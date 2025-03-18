@@ -1,11 +1,11 @@
 package app.ports;
 
-import app.domain.models.person;
+import app.domain.models.Person;
 
-public interface personPort {
-	public boolean existsByDocument(person Person) throws Exception;
-	public void createPerson(person Person) throws Exception;
-	public void deletePerson(person Person) throws Exception;
-	public person findByDocument(person personDto) throws Exception;
+public interface PersonPort {
+	public boolean existsByDocument(Person person) throws Exception;
+	public void createPerson(Person person) throws Exception;
+	public void deletePerson(Person person) throws Exception;
+	public Person findByDocument(long document) throws Exception;
 
 }

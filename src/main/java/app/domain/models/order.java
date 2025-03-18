@@ -5,16 +5,16 @@ import java.sql.Date;
 import lombok.NoArgsConstructor;
 @NoArgsConstructor
 
-public class order {
+public class Order {
 	private long id;
-	private pet petId;
-	private user veterinarian;
-	private person ownerId;
+	private Pet petId;
+	private User veterinarian;
+	private Person ownerId;
 	private String dose;
 	private String medicine;
 	private Date date;
 	
-	public order(long id, pet petId, user veterinarian, person ownerId, String dose, String medicine, Date date) {
+	public Order(long id, Pet petId, User veterinarian, Person ownerId, String dose, String medicine, Date date) {
 		super();
 		this.id = id;
 		this.petId = petId;
@@ -25,7 +25,7 @@ public class order {
 		this.date = date;
 	}
 	
-	public order() {
+	public Order() {
 	}
 
 	public long getId() {
@@ -36,27 +36,27 @@ public class order {
 		this.id = id;
 	}
 
-	public pet getPetId() {
+	public Pet getPetId() {
 		return petId;
 	}
 
-	public void setPetId(pet petId) {
+	public void setPetId(Pet petId) {
 		this.petId = petId;
 	}
 
-	public user getVeterinarian() {
+	public User getVeterinarian() {
 		return veterinarian;
 	}
 
-	public void setVeterinarian(user veterinarian) {
+	public void setVeterinarian(User veterinarian) {
 		this.veterinarian = veterinarian;
 	}
 
-	public person getOwnerId() {
+	public Person getOwnerId() {
 		return ownerId;
 	}
 
-	public void setOwnerId(person ownerId) {
+	public void setOwnerId(Person ownerId) {
 		this.ownerId = ownerId;
 	}
 

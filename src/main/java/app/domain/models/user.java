@@ -3,14 +3,14 @@ package app.domain.models;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
-public class user {
+public class User extends Person {
 	private long id;
-	private person personId;
+	private Person personId;
 	private String password;
 	private String userName;
 	private String role;
 	
-	public user(long id, person personId, String password, String userName, String role) {
+	public User(long id, Person personId, String password, String userName, String role) {
 		super();
 		this.id = id;
 		this.personId = personId;
@@ -19,7 +19,7 @@ public class user {
 		this.role = role;
 	}
 
-	public user() {}
+	public User() {}
 
 	public long getId() {
 		return id;
@@ -29,11 +29,11 @@ public class user {
 		this.id = id;
 	}
 
-	public person getPersonid() {
+	public Person getPersonid() {
 		return personId;
 	}
 
-	public void setPersonid(person personid) {
+	public void setPersonid(Person personid) {
 		this.personId = personid;
 	}
 
