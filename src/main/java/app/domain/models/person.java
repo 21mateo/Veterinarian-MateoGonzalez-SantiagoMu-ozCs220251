@@ -8,17 +8,9 @@ public class Person {
 	private String name;
 	private long document;
 	private int age;
+	private String role;
 	
-	public Person(long id, String name, long document, int age) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.document = document;
-		this.age = age;
-	}
 	
-	public Person() {
-	}
 
 	public long getId() {
 		return id;
@@ -51,5 +43,15 @@ public class Person {
 	public void setAge(int age) {
 		this.age = age;
 	}
+
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
+	}
+	
+	
 
 }

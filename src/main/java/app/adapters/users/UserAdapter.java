@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 import app.adapters.user.entity.UserEntity;
 import app.adapters.users.repository.UserRepository;
+import app.domain.models.Person;
 import app.domain.models.User;
 import app.ports.UserPort;
 import lombok.Getter;
@@ -45,14 +46,34 @@ public class UserAdapter implements UserPort {
 			return null;
 		}
 		User user = new User();
-		user.setPersonId(userEntity.getPersonId().getPersonId());
 		user.setDocument(userEntity.getPersonId().getDocument());
 		user.setName(userEntity.getPersonId().getName());
 		user.setUserName(userEntity.getUserName());
 		user.setPassword(userEntity.getPassword());
 		user.setRole(userEntity.getRole());
-		user.setId(userEntity.getId());
+		user.setId(userEntity.getPersonId().getId());
 		return user;
+	}
+
+
+	@Override
+	public void saveUser(User user) throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public User findByPersonId(Person person) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
+	public void deleteUser(User user) throws Exception {
+		// TODO Auto-generated method stub
+		
 	}
 	
 

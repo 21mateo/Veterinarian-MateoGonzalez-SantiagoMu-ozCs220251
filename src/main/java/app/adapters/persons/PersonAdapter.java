@@ -27,7 +27,7 @@ public class PersonAdapter implements PersonPort {
 	@Override
 	public void createPerson(Person Person) throws Exception {
 		PersonEntity personEntity = personAdapter(Person);
-		personRepository.createPerson(personEntity);
+		personRepository.save(personEntity);
 		Person.setId(personEntity.getId());
 		
 	}
@@ -61,6 +61,24 @@ public class PersonAdapter implements PersonPort {
 		personEntity.setName(person.getName());
 		personEntity.setAge(person.getAge());
 		return personEntity;
+	}
+
+	@Override
+	public boolean existPerson(long document) throws Exception {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void savePerson(Person person) throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void updatePerson(Person person) throws Exception {
+		// TODO Auto-generated method stub
+		
 	}
 	
 }
