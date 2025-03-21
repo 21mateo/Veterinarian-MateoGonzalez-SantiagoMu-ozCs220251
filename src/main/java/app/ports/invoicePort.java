@@ -6,7 +6,7 @@ import app.domain.models.Invoice;
 import app.domain.models.Person;
 
 public interface InvoicePort {
-	public void save(Invoice invoice) throws Exception;
+	public void saveInvoice(Invoice invoice) throws Exception;
 	List<Invoice> getAllInvoices();
 	List<Invoice> getInvoicesByPerson(Person person);
 

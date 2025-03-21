@@ -34,6 +34,8 @@ public class OrderEntity {
 	private String medicine;
 	@Column(name= "date")
 	private Date date;
+	@Column(name= "status")
+	private String status;
 	public long getId() {
 		return id;
 	}
@@ -75,6 +77,12 @@ public class OrderEntity {
 	}
 	public void setDate(Date date) {
 		this.date = date;
+	}
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
 	}
 	
 

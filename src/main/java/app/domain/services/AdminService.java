@@ -48,21 +48,6 @@ public class AdminService {
      
     }
     
-    // Registrar un vendedor (solo administrador puede hacerlo)
-    public void registerSeller(Person seller, User user, Person admin) throws Exception {
-    	validateAdmin(admin);
-        if (personPort.existPerson(seller.getDocument())) {
-            throw new Exception("Ya existe un vendedor con esta cédula");
-        }
-        if (userPort.existsByUserName(user.getUserName())) {
-            throw new Exception("Ya existe ese nombre de usuario registrado");
-        }
-        seller.setRole("seller");
-        personPort.savePerson(seller);
-        user.setDocument(seller.getDocument()); // Relacionamos por la cédula
-        user.setRole("seller");
-        userPort.saveUser(user);
-    }
     
     // Registrar un médico veterinario (solo administrador puede hacerlo)
     public void registerVeterinarian(Person veterinarian, User user, Person admin) throws Exception {
