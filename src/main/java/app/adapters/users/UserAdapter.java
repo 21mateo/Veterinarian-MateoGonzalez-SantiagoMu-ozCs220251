@@ -1,5 +1,8 @@
 package app.adapters.users;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,6 +22,7 @@ import lombok.Setter;
 public class UserAdapter implements UserPort {
 	@Autowired
 	private UserRepository userRepository;
+	private List<User> userList = new ArrayList<>();
 
 	@Override
 	public User findByUserName(User user) throws Exception {
@@ -37,7 +41,13 @@ public class UserAdapter implements UserPort {
 
 	@Override
 	public void createUser(User user) throws Exception {
-		// TODO Auto-generated method stub
+		for (User u : userList) {
+	        if (u.getUserName().equals(user.getUserName())) {
+	            throw new Exception("Ya existe un usuario con ese nombre de usuario.");
+	        }
+	    }
+	    
+	    userList.add(user);
 		
 	}
 	
@@ -58,21 +68,33 @@ public class UserAdapter implements UserPort {
 
 	@Override
 	public void saveUser(User user) throws Exception {
-		// TODO Auto-generated method stub
+		for (User u : userList) {
+	        if (u.getUserName().equals(user.getUserName())) {
+	            throw new Exception("Ya existe un usuario con ese nombre de usuario.");
+	        }
+	    }
+	    userList.add(user);
 		
 	}
 
 
 	@Override
 	public User findByPersonId(Person person) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		for (User user : userList) {
+	        if (user.getId() == person.getId()) { 
+	            return user;
+	        }
+	    }
+	    throw new Exception("No existe un usuario asociado a esa persona.");
 	}
 
 
 	@Override
 	public void deleteUser(User user) throws Exception {
-		// TODO Auto-generated method stub
+		boolean removed = userList.removeIf(u -> u.getUserName().equals(user.getUserName()));
+	    if (!removed) {
+	        throw new Exception("No se encontró el usuario para eliminar.");
+	    }
 		
 	}
 	

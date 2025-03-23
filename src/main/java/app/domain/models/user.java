@@ -8,7 +8,6 @@ public class User extends Person {
 	private String password;
 	private String userName;
 	
-	
 
 	public long getId() {
 		return id;

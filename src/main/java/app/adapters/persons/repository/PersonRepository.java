@@ -10,5 +10,9 @@ public interface PersonRepository extends JpaRepository<PersonEntity, Long> {
 	boolean existsByDocument(Person person);
 	
 	PersonEntity findByDocument(long document);
+	
+	public void deletePerson(Person person);
+	
+	public void savePerson(Person person);
 
 }

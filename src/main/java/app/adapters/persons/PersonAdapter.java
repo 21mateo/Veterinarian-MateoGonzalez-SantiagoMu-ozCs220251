@@ -34,8 +34,12 @@ public class PersonAdapter implements PersonPort {
 
 
 	@Override
-	public void deletePerson(Person Person) throws Exception {
-		// TODO Auto-generated method stub
+	public void deletePerson(Person person) throws Exception {
+		 if (personRepository.existsById(person.getId())) {
+		        personRepository.deletePerson(person);
+		    } else {
+		        throw new Exception("La persona con ID " + person.getId() + " no existe.");
+		    }
 		
 	}
 
@@ -65,19 +69,26 @@ public class PersonAdapter implements PersonPort {
 
 	@Override
 	public boolean existPerson(long document) throws Exception {
-		// TODO Auto-generated method stub
-		return false;
+		return personRepository.existsById(document);
 	}
 
 	@Override
 	public void savePerson(Person person) throws Exception {
-		// TODO Auto-generated method stub
+		if (!personRepository.existsById(person.getId())) {
+	        personRepository.savePerson(person);
+	    } else {
+	        throw new Exception("La persona con ID " + person.getId() + " ya existe.");
+	    }
 		
 	}
 
 	@Override
 	public void updatePerson(Person person) throws Exception {
-		// TODO Auto-generated method stub
+		if (personRepository.existsById(person.getId())) {
+	        personRepository.savePerson(person);
+	    } else {
+	        throw new Exception("No se puede actualizar, la persona con ID " + person.getId() + " no existe.");
+	    }
 		
 	}
 	

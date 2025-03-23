@@ -3,10 +3,9 @@ package app.adapters.orders;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
-import app.adapters.orders.repository.OrderRepository;
 import app.domain.models.Order;
 import app.ports.OrderPort;
 import lombok.Getter;
@@ -17,9 +16,9 @@ import lombok.Setter;
 @Getter
 @NoArgsConstructor
 @Service
+@Repository
 public class OrderAdapter implements OrderPort{
-	@Autowired
-	private OrderRepository orderRepository;
+	
 	private List<Order> orderList = new ArrayList<>();
 
 	@Override

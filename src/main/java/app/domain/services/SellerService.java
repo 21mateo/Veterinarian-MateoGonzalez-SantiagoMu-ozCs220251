@@ -13,7 +13,6 @@ import app.ports.InvoicePort;
 import app.ports.OrderPort;
 import app.ports.PersonPort;
 import app.ports.PetPort;
-import app.ports.UserPort;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -25,8 +24,6 @@ import lombok.Setter;
 public class SellerService {
 	@Autowired
     private PersonPort personPort;
-    @Autowired
-    private UserPort userPort;
     @Autowired
     private OrderPort orderPort;
     @Autowired
@@ -51,7 +48,7 @@ public class SellerService {
  // Registrar factura por venta de medicamento (requiere orden médica)
     public void registerInvoiceWithOrder(Person seller, Invoice invoice) throws Exception {
         validateSeller(seller);
-        Order order = orderPort.findById(invoice.getOrderId());
+        Order order = orderPort.findById(invoice.getOrderId().getId());
         if (order == null) {
             throw new Exception("No existe una orden con ese ID para la venta de medicamento");
         }
