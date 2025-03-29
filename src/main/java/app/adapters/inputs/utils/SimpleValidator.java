@@ -18,5 +18,21 @@ public class SimpleValidator {
 			throw new Exception(element + " debe ser un valor numerico");
 		}
 	}
+	
+	 public Integer intValidator(String value, String element) throws Exception {
+	        try {
+	            return Integer.parseInt(stringValidator(value, element));
+	        } catch (Exception e) {
+	            throw new Exception(element + " debe ser un número entero válido");
+	        }
+	    }
+	 
+	 public Double doubleValidator(String value, String element) throws Exception {
+		    try {
+		        return Double.parseDouble(stringValidator(value, element));
+		    } catch (Exception e) {
+		        throw new Exception(element + " debe ser un número decimal válido");
+		    }
+		}
 
 }

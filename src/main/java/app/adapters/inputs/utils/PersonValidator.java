@@ -13,8 +13,8 @@ public class PersonValidator extends SimpleValidator{
 		return longValidator(value, " numero de documento ");
 	}
 	
-	public long cellPhoneValidator(String value)throws Exception {
-		return longValidator(value, " numero de celular ");
+	public long ageValidator(String value)throws Exception {
+		return longValidator(value, " edad de la persona ");
 	}
 
 }

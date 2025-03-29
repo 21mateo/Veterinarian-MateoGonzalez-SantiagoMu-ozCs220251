@@ -63,34 +63,34 @@ public class AdminInput implements InputPort{
 	}
 
 	private void registerSeller() {
-		System.out.println("Ingrese el nombre del vendedor:");
-		String name = personValidator.nameValidator(Utils.getReader().nextLine());
-		System.out.println("Ingrese el documento del vendedor:");
-		long document = personValidator.documentValidator(Utils.getReader().nextLine());
-		System.out.println("Ingrese la edad del vendedor:");
-		int age = Integer.parseInt(Utils.getReader().nextLine());
-		System.out.println("Ingrese el nombre de usuario del vendedor:");
-		String userName = userValidator.userNameValidator(Utils.getReader().nextLine());
-		System.out.println("Ingrese la contraseña del vendedor:");
-		String password = userValidator.passwordValidator(Utils.getReader().nextLine());
-		Seller seller = new Seller(document, name, age, userName, password);
-		adminService.registerSeller(seller);
+		System.out.println("Ingrese el nombre del veterinario:");
+        String name = personValidator.nameValidator(Utils.getReader().nextLine());
+        System.out.println("Ingrese la cédula del veterinario:");
+        long document = personValidator.documentValidator(Utils.getReader().nextLine());
+        System.out.println("Ingrese la edad del veterinario:");
+        int age = Integer.parseInt(Utils.getReader().nextLine());
+        System.out.println("Ingrese el username del veterinario:");
+        String userName = userValidator.userNameValidator(Utils.getReader().nextLine());
+        System.out.println("Ingrese la contraseña del veterinario:");
+        String password = userValidator.passwordValidator(Utils.getReader().nextLine());
+
+        adminService.registerVeterinarian(document, name, age, userName, password);
 		
 	}
 
 	private void registerVeterinarian() {
 		System.out.println("Ingrese el nombre del veterinario:");
-		String name = personValidator.nameValidator(Utils.getReader().nextLine());
-		System.out.println("Ingrese el documento del veterinario:");
-		long document = personValidator.documentValidator(Utils.getReader().nextLine());
-		System.out.println("Ingrese la edad del veterinario:");
-		int age = Integer.parseInt(Utils.getReader().nextLine());
-		System.out.println("Ingrese el nombre de usuario del veterinario:");
-		String userName = userValidator.userNameValidator(Utils.getReader().nextLine());
-		System.out.println("Ingrese la contraseña del veterinario:");
-		String password = userValidator.passwordValidator(Utils.getReader().nextLine());
-		Veterinarian veterinarian = new Veterinarian(document, name, age, userName, password);
-		adminService.registerVeterinarian(veterinarian);
+        String name = personValidator.nameValidator(Utils.getReader().nextLine());
+        System.out.println("Ingrese la cédula del veterinario:");
+        long document = personValidator.documentValidator(Utils.getReader().nextLine());
+        System.out.println("Ingrese la edad del veterinario:");
+        int age = Integer.parseInt(Utils.getReader().nextLine());
+        System.out.println("Ingrese el username del veterinario:");
+        String userName = userValidator.userNameValidator(Utils.getReader().nextLine());
+        System.out.println("Ingrese la contraseña del veterinario:");
+        String password = userValidator.passwordValidator(Utils.getReader().nextLine());
+
+        adminService.registerVeterinarian(document, name, age, userName, password);
 		
 	}
 
