@@ -1,5 +1,7 @@
 package app.adapters.veterinarian.entity;
 
+import java.sql.Date;
+
 import app.adapters.order.entity.OrderEntity;
 import app.adapters.pet.entity.PetEntity;
 import app.adapters.user.entity.UserEntity;
@@ -20,7 +22,7 @@ public class VeterinarianHistoryEntity {
 	@Column(name= "pet_id")
 	private PetEntity petId;
 	@Column(name= "date")
-	private long date;
+	private Date date;
 	@Column(name= "veterinarian")
 	private UserEntity veterinarian;
 	@Column(name= "reason")
@@ -50,10 +52,10 @@ public class VeterinarianHistoryEntity {
 	public void setPetId(PetEntity petId) {
 		this.petId = petId;
 	}
-	public long getDate() {
+	public Date getDate() {
 		return date;
 	}
-	public void setDate(long date) {
+	public void setDate(Date date) {
 		this.date = date;
 	}
 	public UserEntity getVeterinarian() {
@@ -122,6 +124,7 @@ public class VeterinarianHistoryEntity {
 	public void setAlergies(String alergies) {
 		this.alergies = alergies;
 	}
+	
 	
 
 }
