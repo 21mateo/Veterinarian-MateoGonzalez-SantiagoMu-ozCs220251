@@ -37,6 +37,9 @@ public class VeterinarianHistory {
 		this.vaccination = vaccination;
 		this.alergies = alergies;
 	}
+	public VeterinarianHistory() {
+		// TODO Auto-generated constructor stub
+	}
 	public Date getDate() {
 		return date;
 	}
@@ -114,6 +117,10 @@ public class VeterinarianHistory {
 	}
 	public void setAlergies(String alergies) {
 		this.alergies = alergies;
+	}
+	public void setDate(long timeMillis) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 	

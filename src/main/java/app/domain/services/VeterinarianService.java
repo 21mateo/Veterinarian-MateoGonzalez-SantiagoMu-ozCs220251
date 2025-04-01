@@ -34,6 +34,9 @@ public class VeterinarianService {
     private OrderPort orderPort;
     @Autowired
     private VeterinarianHistoryPort veterinarianHistoryPort; 
+    public void saveClinicalHistory(long id, VeterinarianHistory history) {
+        // Implementación aquí
+    }
     
  // Validar que la operación la haga un veterinario
     private void validateVeterinarian(Person veterinarian) throws Exception {

@@ -49,19 +49,34 @@ public class InvoiceAdapter implements InvoicePort{
 	    return invoiceEntity;
 	}
 
-	private PetEntity adapter(Pet petId) {
-		// TODO Auto-generated method stub
-		return null;
+	private PetEntity adapter(Pet pet) {
+		if (pet == null) return null;
+	    PetEntity petEntity = new PetEntity();
+	    petEntity.setPetId(pet.getPetId());
+	    petEntity.setName(pet.getName());
+	    petEntity.setAge(pet.getAge());
+	    return petEntity;
 	}
 
-	private PersonEntity adapter(Person ownerId) {
-		// TODO Auto-generated method stub
-		return null;
+	private PersonEntity adapter(Person owner) {
+		if (owner == null) return null;
+	    PersonEntity personEntity = new PersonEntity();
+	    personEntity.setId(owner.getId());
+	    personEntity.setName(owner.getName());
+	    personEntity.setAge(owner.getAge());
+	    return personEntity;
 	}
 
-	private OrderEntity adapter(Order orderId) {
-		// TODO Auto-generated method stub
-		return null;
+	private OrderEntity adapter(Order order) {
+		if (order == null) return null;
+	    OrderEntity orderEntity = new OrderEntity();
+	    orderEntity.setId(order.getId());
+	    orderEntity.setPetId(adapter(order.getPetId()));
+	    orderEntity.setOwnerId(adapter(order.getOwnerId()));
+	    orderEntity.setMedicine(order.getMedicine());
+	    orderEntity.setDose(order.getDose());
+	    orderEntity.setDate(order.getDate());
+	    return orderEntity;
 	}
 
 	@Override
@@ -83,19 +98,30 @@ public class InvoiceAdapter implements InvoicePort{
 	    return invoices;
 	}
 
-	private Order adapter(OrderEntity orderId) {
-		// TODO Auto-generated method stub
-		return null;
+	private Order adapter(OrderEntity orderEntity) {
+		if (orderEntity == null) return null;
+	    Order order = new Order();
+	    order.setId(orderEntity.getId());
+	    order.setPetId(adapter(orderEntity.getPetId())); 
+	    order.setOwnerId(adapter(orderEntity.getOwnerId())); 
+	    order.setMedicine(orderEntity.getMedicine());
+	    order.setDose(orderEntity.getDose());
+	    order.setDate(orderEntity.getDate());
+	    return order;
 	}
 
-	private Person adapter(PersonEntity ownerId) {
-		// TODO Auto-generated method stub
-		return null;
+	private Person adapter(PersonEntity ownerEntity) {
+		if (ownerEntity == null) return null;
+	    Person owner = new Person();
+	    owner.setId(ownerEntity.getId());
+	    return owner;
 	}
 
-	private Pet adapter(PetEntity petId) {
-		// TODO Auto-generated method stub
-		return null;
+	private Pet adapter(PetEntity petEntity) {
+		if (petEntity == null) return null;
+	    Pet pet = new Pet();
+	    pet.setPetId(petEntity.getPetId());
+	    return pet;
 	}
 
 	@Override

@@ -69,12 +69,12 @@ public class LoginInput implements InputPort {
         String password = Utils.getReader().nextLine();
         userValidator.passwordValidator(password);
         
-        User userDto = new User();
-        userDto.setUserName(userName);
-        userDto.setPassword(password);
-        loginService.login(userDto);
+        User user = new User();
+        user.setUserName(userName);
+        user.setPassword(password);
+        loginService.login(user);
         
-        switch (userDto.getRole().toLowerCase()) {
+        switch (user.getRole().toLowerCase()) {
             case "admin":
                 adminInput.menu();
                 break;

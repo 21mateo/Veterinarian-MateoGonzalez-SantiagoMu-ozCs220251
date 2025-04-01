@@ -69,4 +69,9 @@ public class SellerService {
         invoicePort.saveInvoice(invoice);
     }
 
+	public void createInvoice(long document, long petId, long orderId, double amount, String items) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

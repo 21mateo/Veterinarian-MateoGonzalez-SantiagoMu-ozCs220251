@@ -30,6 +30,9 @@ public class AdminService {
     private InvoicePort invoicePort;
     @Autowired
     private PetPort petPort;
+    public void registerVeterinarian(long document, String name, int age, String userName, String password) {
+        // Implementación aquí
+    }
     
     // Validar que la operación la haga un administrador
     private void validateAdmin(Person admin) throws Exception {

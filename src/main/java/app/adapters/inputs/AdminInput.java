@@ -62,7 +62,7 @@ public class AdminInput implements InputPort{
 		}
 	}
 
-	private void registerSeller() {
+	private void registerSeller() throws Exception {
 		System.out.println("Ingrese el nombre del veterinario:");
         String name = personValidator.nameValidator(Utils.getReader().nextLine());
         System.out.println("Ingrese la cédula del veterinario:");
@@ -78,7 +78,7 @@ public class AdminInput implements InputPort{
 		
 	}
 
-	private void registerVeterinarian() {
+	private void registerVeterinarian() throws Exception {
 		System.out.println("Ingrese el nombre del veterinario:");
         String name = personValidator.nameValidator(Utils.getReader().nextLine());
         System.out.println("Ingrese la cédula del veterinario:");

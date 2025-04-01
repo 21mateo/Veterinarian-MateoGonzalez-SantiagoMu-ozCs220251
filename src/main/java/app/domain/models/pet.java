@@ -26,6 +26,10 @@ public class Pet {
 		this.weight = weight;
 	}
 
+	public Pet() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public long getPetId() {
 		return petId;
 	}

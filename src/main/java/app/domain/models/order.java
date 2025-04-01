@@ -27,6 +27,9 @@ public class Order {
 		this.date = date;
 		this.status = status;
 	}
+	public Order() {
+		// TODO Auto-generated constructor stub
+	}
 	public long getId() {
 		return id;
 	}

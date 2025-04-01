@@ -74,6 +74,7 @@ public class SellerInput implements InputPort {
         System.out.println("Ingrese los items de la factura:");
         String items = invoiceValidator.itemsValidator(Utils.getReader().nextLine());
         
+        
         sellerService.createInvoice(document, petId, orderId, amount, items);
     }
 }
